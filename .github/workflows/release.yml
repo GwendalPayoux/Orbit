@@ -25,7 +25,7 @@ jobs:
       - run: node node_modules/electron/install.js
       - run: pnpm test
       - name: Build and upload to a draft GitHub release
-        run: pnpm exec electron-builder --config electron-builder.config.cjs --publish always
+        run: node scripts/build-release.cjs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_LINK: ${{ matrix.os == 'windows-latest' && secrets.WIN_CSC_LINK || matrix.os == 'macos-latest' && secrets.MAC_CSC_LINK || '' }}

@@ -71,7 +71,7 @@ Le workflow `.github/workflows/release.yml` prépare des builds Windows/macOS/Li
 
 ## Vérifications
 
-29 tests unitaires et d’intégration : regroupement des variantes, sélection des exécutables principaux, conservation des routines/favoris, exclusion des noms absents, catégories hiérarchiques, exploration, suivi des processus et mises à jour. Les lectures de processus Windows peuvent nécessiter de sortir d’un environnement de test isolé ; l’application ne demande pas automatiquement des droits administrateur.
+30 tests unitaires et d’intégration : configuration de publication, regroupement des variantes, sélection des exécutables principaux, conservation des routines/favoris, exclusion des noms absents, catégories hiérarchiques, exploration, suivi des processus et mises à jour. Les lectures de processus Windows peuvent nécessiter de sortir d’un environnement de test isolé ; l’application ne demande pas automatiquement des droits administrateur.
 
 Quatre scénarios Chromium vérifient l’interface et les nouvelles fonctions avec un pont natif simulé. `scripts/verify-desktop.cjs` teste également Electron réel en fenêtre masquée et profil temporaire : preload IPC, icône Windows, détection de processus, sauvegarde des routines et sous-rubriques, fermeture propre. Les scripts d’interface nécessitent Playwright. La lecture de métadonnées Windows a été vérifiée sur un exécutable réel et trois volumes prêts ont été énumérés ; aucun scan intégral de tous les disques n’a été exécuté pendant les tests.
 
