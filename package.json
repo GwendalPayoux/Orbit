@@ -1,0 +1,45 @@
+{
+  "name": "orbit-launcher",
+  "version": "0.5.0",
+  "description": "Une bibliothèque commune pour vos jeux et logiciels",
+  "main": "desktop/main.cjs",
+  "author": "Orbit",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/GwendalPayoux/Orbit.git" },
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "dist": "electron-builder --config electron-builder.config.cjs --publish never"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.orbit.launcher",
+    "productName": "Orbit",
+    "files": [
+      "desktop/**/*",
+      "ui/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": ["dmg", "zip"],
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

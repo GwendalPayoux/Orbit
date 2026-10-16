@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+dist/
+*.log
+.tools/
+*-preview.png
+ui-preview.png
